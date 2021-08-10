@@ -50,6 +50,7 @@ int main(void)
 			else
 			{
 				list<ObjectPool*>::iterator iter = Array.begin();
+
 				for (iter = Array.begin(); iter != Array.end(); ++iter)
 				{
 					if (!(*iter)->Active)
@@ -59,6 +60,7 @@ int main(void)
 						break;
 					}
 				}
+
 				if (iter == Array.end())
 				{
 					ObjectPool* pTmp = new ObjectPool(Count++, 0, false);
