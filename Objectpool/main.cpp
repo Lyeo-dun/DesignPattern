@@ -27,6 +27,7 @@ bool check = false;
 
 int main(void)
 {
+	//배열은 리스트, 삭제는 #define safe delete
 	list<ObjectPool*> Array;
 
 	{
@@ -86,6 +87,5 @@ int main(void)
 
 	Array.clear();
 
-	//배열은 리스트, 삭제는 #define safe delete
 	return 0;
 }
