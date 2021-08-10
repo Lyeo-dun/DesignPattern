@@ -28,13 +28,14 @@ bool check = false;
 int main(void)
 {
 	list<ObjectPool*> Array;
-	//ObjectPool* Array[128] = { NULL };
-	for (int i = 0; i < 128; ++i)
-	{
-		Array.push_back(new ObjectPool);
-	}
+
 	{
 		int i = 0;
+		for (i = 0; i < 128; ++i)
+		{
+			Array.push_back(new ObjectPool);
+		}
+		i = 0;		
 		for (list<ObjectPool*>::iterator iter = Array.begin(); iter != Array.end(); ++iter)
 		{
 			(*iter)->Active = false;
