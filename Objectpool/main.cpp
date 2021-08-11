@@ -19,7 +19,7 @@ struct ObjectPool
 	bool Active;
 
 	ObjectPool() : Key(0), Value(0), Active(false) {}
-	ObjectPool(int _Key, int _Value, bool _Active): Key(_Key), Value(_Value), Active(_Active) {}
+	ObjectPool(int _Key, int _Value, bool _Active) : Key(_Key), Value(_Value), Active(_Active) {}
 	~ObjectPool() {}
 };
 
@@ -50,7 +50,6 @@ int main(void)
 			else
 			{
 				list<ObjectPool*>::iterator iter = Array.begin();
-
 				for (iter = Array.begin(); iter != Array.end(); ++iter)
 				{
 					if (!(*iter)->Active)
@@ -60,7 +59,6 @@ int main(void)
 						break;
 					}
 				}
-
 				if (iter == Array.end())
 				{
 					ObjectPool* pTmp = new ObjectPool(Count++, 0, false);
