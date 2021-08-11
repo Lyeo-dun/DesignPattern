@@ -1,6 +1,7 @@
 #include <iostream>
 #include <Windows.h>
 #include <list>
+#include <map>
 #include <string>
 
 using namespace std;
@@ -34,7 +35,7 @@ public:
 	void Initialize()
 	{
 		Texture = "-->";
-		Transinfo.Position = Vector3(2, 15);
+		Transinfo.Position = Vector3(4.0f, 15.0f);
 		Transinfo.Scale = Vector3(Texture.length(), 1);
 	}
 	void Update()
@@ -73,7 +74,7 @@ int main(void)
 	{
 		system("cls");
 
-		Output(2, 15, "◎");
+		Output(2, 15, "◎"); //시작 지점
 
 		check = false;
 
@@ -103,7 +104,6 @@ int main(void)
 			EnableList.push_back((*iter));
 			//현재 리스트에서는 삭제
 			DesableList.pop_front();
-
 		}
 
 		//Render
@@ -113,7 +113,7 @@ int main(void)
 			(*iter)->Output();
 
 			//오브젝트의 value값이 일정 값 이상이 된다면 
-			if ((*iter)->GetPosition().x > 120 - (*iter)->GetScale().x)
+			if ((*iter)->GetPosition().x >= 120 - (*iter)->GetScale().x)
 			{
 				//현재 리스트에서 DesableList로 옮김
 				DesableList.push_back((*iter));
