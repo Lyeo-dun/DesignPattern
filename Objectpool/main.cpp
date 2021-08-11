@@ -42,7 +42,7 @@ public:
 	{
 		Transinfo.Position.x += 2.0f;
 	}
-	void Output()
+	void Render()
 	{
 		COORD Pos = { Transinfo.Position.x, Transinfo.Position.y };
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
@@ -110,7 +110,7 @@ int main(void)
 		for (list<Object*>::iterator iter = EnableList.begin(); iter != EnableList.end();/*증감문 따로 제어*/)
 		{
 			(*iter)->Update();
-			(*iter)->Output();
+			(*iter)->Render();
 
 			//오브젝트의 value값이 일정 값 이상이 된다면 
 			if ((*iter)->GetPosition().x >= 120 - (*iter)->GetScale().x)

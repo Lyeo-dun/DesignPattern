@@ -76,7 +76,7 @@ public:
 public:
 	int Number;
 
-	void Output()
+	void Render()
 	{
 		cout << "Object" << endl;
 	}
@@ -102,7 +102,7 @@ int main(void)
 	
 	/*
 	Object* pObj = new Object(3);
-	pObj->Output();
+	pObj->Render();
 	
 	SAFE_DELETE(pObj);
 	*/
@@ -114,7 +114,7 @@ int main(void)
 	//	cout << "null!" << endl;
 	//}
 
-	GETSINGLETON(Object)->Output();
+	GETSINGLETON(Object)->Render();
 	GETSINGLETON(Object)->Number = 10;
 
 	cout << GETSINGLETON(Object)->Number << endl;
