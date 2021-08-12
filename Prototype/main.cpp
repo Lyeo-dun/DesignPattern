@@ -2,7 +2,7 @@
 #include "PrototypeManager.h"
 #include "Object.h"
 
-Object* pObjList[3];
+list<Object*> pObjList;
 
 void Init(string _str)
 {
@@ -20,12 +20,17 @@ void Init(string _str)
 	}
 	else //찾는 객체가 있다면 복사
 	{
-		for (int i = 0; i < 3; ++i)
+		int i = 0;
+		for (i = 0; i < 3; ++i)
 		{
-			pObjList[i] = pObj->Clone(); //참조된 원형 객체의 복사본 넘김
-
-			pObjList[i]->Initialize(); //복사본 초기화
-			pObjList[i]->SetIndex(i + 1); //복사본의 인덱스값을 변경
+			pObjList.push_back(pObj->Clone()); //참조된 원형 객체의 복사본 넘김			
+		}
+		i = 0;
+		for (list<Object*>::iterator iter = pObjList.begin(); iter != pObjList.end(); ++iter)
+		{
+			(*iter)->Initialize(); //복사본 초기화
+			(*iter)->SetIndex(i + 1); //복사본의 인덱스값을 변경
+			i++;
 		}
 	}
 }
@@ -45,14 +50,22 @@ int main(void)
 
 	Init("Object"); //그냥 가지고 오게 될 경우 없다면 에러가 날 것이기 때문에
 
-	for (int i = 0; i < 3; ++i)
-		if(pObjList[i])
-			pObjList[i]->Render(i);
-
-	for (int i = 0; i < 3; ++i)
 	{
-		SAFE_DELETE(pObjList[i]);
+		int i = 0;
+		for (list<Object*>::iterator iter = pObjList.begin(); iter != pObjList.end(); ++iter)
+			if ((*iter))
+			{
+				(*iter)->Render(i);
+				i++;
+			}
 	}
+
+	for (list<Object*>::iterator iter = pObjList.begin(); iter != pObjList.end(); ++iter)
+	{
+		SAFE_DELETE((*iter));
+	}
+
+	pObjList.clear();
 
 	return 0;
 }
