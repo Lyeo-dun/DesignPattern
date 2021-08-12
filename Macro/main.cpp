@@ -37,7 +37,7 @@ inline void Safe_Release(T & _rObj)
 	if (_rObj)
 	{
 		delete _rObj;
-		_rObj = NULL;
+		_rObj = nullptr;
 	}
 }
 
@@ -49,7 +49,7 @@ static type** GetInstance()\
 {\
 	static type* pInstance = new type;\
 \
-	if(pInstance == NULL)\
+	if(pInstance == nullptr)\
 		pInstance = new type;\
 \
 	return &pInstance;\
@@ -58,10 +58,10 @@ static void DestroyInstance()\
 {\
 	type** ppInstance = GetInstance();\
 \
-	if ((*ppInstance) != NULL)\
+	if ((*ppInstance) != nullptr)\
 	{\
 		delete *ppInstance; \
-		ppInstance = NULL; \
+		ppInstance = nullptr; \
 	}\
 }
 

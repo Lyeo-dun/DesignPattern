@@ -10,7 +10,7 @@ template<typename T>
 void Safe_Delete(T& _obj)
 {
 	delete (_obj);
-	_obj = NULL;
+	_obj = nullptr;
 }
 #define SAFE_DELETE(type) Safe_Delete(type)
 
@@ -53,7 +53,7 @@ public:
 	Vector3 GetPosition() { return Transinfo.Position; }
 	void SetPosition(Vector3 _Pos) { Transinfo.Position = _Pos; }
 	Vector3 GetScale() { return Transinfo.Scale; }
-	Vector3 SetScale(Vector3 _Scale) { Transinfo.Scale = _Scale; }
+	void SetScale(Vector3 _Scale) { Transinfo.Scale = _Scale; }
 
 public:
 	~Object() {}

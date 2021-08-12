@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Macro", "Macro\Macro.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Objectpool", "Objectpool\Objectpool.vcxproj", "{DB81FEF9-7E27-4E59-84A9-9FAB5C20A0F0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Prototype", "Prototype\Prototype.vcxproj", "{2759A331-2BAD-49D4-8187-1D10A2304E03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{DB81FEF9-7E27-4E59-84A9-9FAB5C20A0F0}.Release|x64.Build.0 = Release|x64
 		{DB81FEF9-7E27-4E59-84A9-9FAB5C20A0F0}.Release|x86.ActiveCfg = Release|Win32
 		{DB81FEF9-7E27-4E59-84A9-9FAB5C20A0F0}.Release|x86.Build.0 = Release|Win32
+		{2759A331-2BAD-49D4-8187-1D10A2304E03}.Debug|x64.ActiveCfg = Debug|x64
+		{2759A331-2BAD-49D4-8187-1D10A2304E03}.Debug|x64.Build.0 = Debug|x64
+		{2759A331-2BAD-49D4-8187-1D10A2304E03}.Debug|x86.ActiveCfg = Debug|Win32
+		{2759A331-2BAD-49D4-8187-1D10A2304E03}.Debug|x86.Build.0 = Debug|Win32
+		{2759A331-2BAD-49D4-8187-1D10A2304E03}.Release|x64.ActiveCfg = Release|x64
+		{2759A331-2BAD-49D4-8187-1D10A2304E03}.Release|x64.Build.0 = Release|x64
+		{2759A331-2BAD-49D4-8187-1D10A2304E03}.Release|x86.ActiveCfg = Release|Win32
+		{2759A331-2BAD-49D4-8187-1D10A2304E03}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
