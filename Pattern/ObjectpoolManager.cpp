@@ -77,9 +77,14 @@ void ObjectpoolManager::AddDesObjList(string _Str)
 	}
 }
 
-void ObjectpoolManager::AddEnalbeList(Vector3 _pos)
+void ObjectpoolManager::AddEnalbeList(string _str, Vector3 _pos)
 {
 	auto iter = DesableList.begin();
+
+	if (iter == DesableList.end())
+	{
+		AddDesObjList(_str);
+	}
 
 	(*iter)->Initialize();
 	(*iter)->SetPosition(_pos);

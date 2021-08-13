@@ -21,14 +21,8 @@ int main(void)
 
 		if (Check)
 		{
-			//** DesableList 에 여분의 오브젝트가 있는지 확인 하고 없다면...
-			if (GETSINGLETON(ObjectpoolManager)->GetDesableList()->empty())
-			{
-				GETSINGLETON(ObjectpoolManager)->AddDesObjList("Object");
-			}
-
 			//** 초기화 및 사용할 리스트에 추가.
-			GETSINGLETON(ObjectpoolManager)->AddEnalbeList(Vector3(4.0f, 15.0f));			
+			GETSINGLETON(ObjectpoolManager)->AddEnalbeList("Object", Vector3(4.0f, 15.0f));
 		}
 
 		GETSINGLETON(ObjectpoolManager)->Update();
