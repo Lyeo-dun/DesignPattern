@@ -13,6 +13,7 @@ private:
 
 public:
 	void Initialize();
+	void Release();
 	Object* FindObject(string _str);
 
 private:

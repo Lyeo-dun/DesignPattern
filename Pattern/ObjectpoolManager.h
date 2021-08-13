@@ -12,6 +12,8 @@ public:
 	void Initialize();
 	void Update();
 	void Render();
+	void Release();
+
 private:
 	list<Object*> EnableList; //실제 사용한 오브젝트 리스트(랜더링 될 오브젝트 리스트)
 	list<Object*> DesableList; //사용을 마친 오브젝트 리스트

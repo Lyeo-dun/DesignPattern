@@ -37,11 +37,26 @@ void ObjectpoolManager::Update()
 
 void ObjectpoolManager::Render()
 {
-	for (auto iter = EnableList.begin();
-		iter != EnableList.end();)
+	for (auto iter = EnableList.begin(); iter != EnableList.end() ; ++iter)
 	{
 		(*iter)->Render();
 	}
+}
+
+void ObjectpoolManager::Release()
+{
+	auto iter = EnableList.begin();
+	for (iter = EnableList.begin(); iter != EnableList.end(); ++iter)
+	{
+		SAFE_DELETE(*iter);
+	}
+	for (iter = DesableList.begin(); iter != DesableList.end(); ++iter)
+	{
+		SAFE_DELETE(*iter);
+	}
+
+	EnableList.clear();
+	DesableList.clear();
 }
 
 void ObjectpoolManager::AddDesObjList(string _Str)
@@ -71,6 +86,7 @@ void ObjectpoolManager::AddEnalbeList(Vector3 _pos)
 	(*iter)->Initialize();
 	(*iter)->SetPosition(_pos);
 
-	EnableList.begin();
+	EnableList.push_back((*iter));
+	DesableList.erase(iter);
 }
 

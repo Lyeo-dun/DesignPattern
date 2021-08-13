@@ -19,6 +19,16 @@ void PrototypeManager::Initialize()
 	PrototypeList["Object"] = new Object(TransInfo);
 }
 
+void PrototypeManager::Release()
+{
+	for (auto iter = PrototypeList.begin(); iter != PrototypeList.end(); ++iter)
+	{
+		SAFE_DELETE((*iter).second);
+	}
+
+	PrototypeList.clear();
+}
+
 Object* PrototypeManager::FindObject(string _str)
 {
 	//** map에 오브젝트가 있는지 확인. 
