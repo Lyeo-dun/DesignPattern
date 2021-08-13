@@ -8,16 +8,8 @@ private:
 	Transform Transinfo;
 public:
 	Object* Clone() { return new Object(*this); }
-	void Initialize()
-	{
-		Texture = "-->";
-		Transinfo.Position = Vector3(4.0f, 15.0f);
-		Transinfo.Scale = Vector3((float)Texture.length(), 1.0f);
-	}
-	void Update()
-	{
-		Transinfo.Position.x += 2.0f;
-	}
+	void Initialize();
+	void Update();
 	void Render();
 
 	Vector3 GetPosition() { return Transinfo.Position; }

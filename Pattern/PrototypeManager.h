@@ -9,7 +9,7 @@ public:
 	DECLARE_SINGLETON(PrototypeManager)
 
 private:
-	map<string, Object*> PrototypeList;
+	map<string, Object*> PrototypeList;//원본 저장 리스트
 
 public:
 	void Initialize(string);
