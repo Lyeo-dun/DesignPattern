@@ -22,7 +22,8 @@ int main(void)
 			if (GETSINGLETON(ObjectpoolManager)->GetDesableList()->empty())
 			{
 				GETSINGLETON(ObjectpoolManager)->AddDesObjList("Object");
-			}	
+			}
+
 			//** 초기화 및 사용할 리스트에 추가.
 			GETSINGLETON(ObjectpoolManager)->AddEnalbeList(Vector3(4.0f, 15.0f));	
 			

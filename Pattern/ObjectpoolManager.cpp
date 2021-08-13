@@ -54,7 +54,6 @@ void ObjectpoolManager::Release()
 	{
 		SAFE_DELETE(*iter);
 	}
-
 	EnableList.clear();
 	DesableList.clear();
 }
