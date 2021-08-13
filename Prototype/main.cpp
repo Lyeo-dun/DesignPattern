@@ -2,6 +2,9 @@
 #include "PrototypeManager.h"
 #include "Object.h"
 
+
+//Object* pObjList[3] 
+//비슷하지만 다름. 사용법을 다르게 생각할 것!
 list<Object*> pObjList;
 
 void Init(string _str)
@@ -26,7 +29,8 @@ void Init(string _str)
 		pTempObj->Initialize(); //복사본 초기화
 		pTempObj->SetIndex(i + 1); //복사본의 인덱스값을 변경
 
-		pObjList.push_back(pTempObj); //참조된 원형 객체의 복사본 넘김			
+		pObjList.push_back(pTempObj); //참조된 원형 객체의 복사본 넘김
+		//아무것도 담기지 않았기 때문에 정보가 담긴 객체를 넣어야함
 	}
 }
 
