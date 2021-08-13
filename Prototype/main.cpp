@@ -18,17 +18,15 @@ void Init(string _str)
 		cout << " 복제할 원본 객체가 없음 " << endl;
 		return; //함수 종료
 	}
-	else //찾는 객체가 있다면 복사
+	 //찾는 객체가 있다면 복사
+	for (int i = 0; i < 3; ++i)
 	{
-		for (int i = 0; i < 3; ++i)
-		{
-			Object* pTempObj = pObj->Clone();
+		Object* pTempObj = pObj->Clone();
 
-			pTempObj->Initialize(); //복사본 초기화
-			pTempObj->SetIndex(i + 1); //복사본의 인덱스값을 변경
+		pTempObj->Initialize(); //복사본 초기화
+		pTempObj->SetIndex(i + 1); //복사본의 인덱스값을 변경
 
-			pObjList.push_back(pTempObj); //참조된 원형 객체의 복사본 넘김			
-		}
+		pObjList.push_back(pTempObj); //참조된 원형 객체의 복사본 넘김			
 	}
 }
 
