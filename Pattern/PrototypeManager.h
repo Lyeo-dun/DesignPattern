@@ -12,7 +12,7 @@ private:
 	map<string, Object*> PrototypeList;
 
 public:
-	void Initialize();
+	void Initialize(string);
 	void Release();
 	Object* FindObject(string _str);
 

@@ -5,7 +5,7 @@ void Output(float _x, float _y, string _str);
 
 int main(void)
 {
-	GETSINGLETON(PrototypeManager)->Initialize();
+	GETSINGLETON(PrototypeManager)->Initialize("Object");
 	GETSINGLETON(ObjectpoolManager)->Initialize();
 
 	bool Check = false;

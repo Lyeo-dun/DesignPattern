@@ -10,13 +10,13 @@ PrototypeManager::~PrototypeManager()
 {
 }
 
-void PrototypeManager::Initialize()
+void PrototypeManager::Initialize(string _Str)
 {
 	//** Prototype »ý¼º
 	Transform TransInfo;
 	TransInfo.Position = Vector3(0.0f, 0.0f);
 
-	PrototypeList["Object"] = new Object(TransInfo);
+	PrototypeList[_Str] = new Object(TransInfo);
 }
 
 void PrototypeManager::Release()
