@@ -36,7 +36,7 @@ public:
 	{
 		Texture = "-->";
 		Transinfo.Position = Vector3(4.0f, 15.0f);
-		Transinfo.Scale = Vector3(Texture.length(), 1);
+		Transinfo.Scale = Vector3((float)Texture.length(), 1.0f);
 	}
 	void Update()
 	{
@@ -44,7 +44,7 @@ public:
 	}
 	void Render()
 	{
-		COORD Pos = { Transinfo.Position.x, Transinfo.Position.y };
+		COORD Pos = { (SHORT)Transinfo.Position.x, (SHORT)Transinfo.Position.y };
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 
 		cout << Texture << endl;
@@ -154,7 +154,7 @@ int main(void)
 
 void Output(float _x, float _y, string _str)
 {
-	COORD Pos = {_x, _y};
+	COORD Pos = { (SHORT)_x, (SHORT)_y};
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 
 	cout << _str << endl;

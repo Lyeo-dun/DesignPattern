@@ -18,7 +18,7 @@ public:
 public:
 	void Initialize();
 	int Update();
-	void Render(int n);
+	void Render();
 
 public:
 	void SetIndex(int _index) { Transinfo.Index = _index; }
