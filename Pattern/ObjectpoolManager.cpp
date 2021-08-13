@@ -16,6 +16,34 @@ void ObjectpoolManager::Initialize()
 	GETSINGLETON(PrototypeManager)->Initialize();
 }
 
+void ObjectpoolManager::Update()
+{
+	for (auto iter = EnableList.begin();iter != EnableList.end();)
+	{
+		(*iter)->Update();
+
+		if ((*iter)->GetPosition().x >= 100)
+		{
+			//** 현재 리스트에서 삭제.
+			DesableList.push_back((*iter));
+
+			//** 현재 리스트의 다음 리스트의 iter를 줌
+			iter = EnableList.erase(iter);
+		}
+		else
+			++iter;
+	}
+}
+
+void ObjectpoolManager::Render()
+{
+	for (auto iter = EnableList.begin();
+		iter != EnableList.end();)
+	{
+		(*iter)->Render();
+	}
+}
+
 void ObjectpoolManager::AddDesObjList(string _Str)
 {
 	Object* Obj = GETSINGLETON(PrototypeManager)->FindObject(_Str);
@@ -32,9 +60,17 @@ void ObjectpoolManager::AddDesObjList(string _Str)
 	for (int i = 0; i < 5; ++i)
 	{
 		Object* TmpObj = Obj->Clone();
-		TmpObj->Initialize();
-
 		DesableList.push_back(TmpObj);
 	}
+}
+
+void ObjectpoolManager::AddEnalbeList(Vector3 _pos)
+{
+	auto iter = DesableList.begin();
+
+	(*iter)->Initialize();
+	(*iter)->SetPosition(_pos);
+
+	EnableList.begin();
 }
 
