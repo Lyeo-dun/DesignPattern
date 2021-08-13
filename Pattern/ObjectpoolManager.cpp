@@ -79,12 +79,12 @@ void ObjectpoolManager::AddDesObjList(string _Str)
 
 void ObjectpoolManager::AddEnalbeList(string _str, Vector3 _pos)
 {
-	auto iter = DesableList.begin();
-
-	if (iter == DesableList.end())
+	if (DesableList.empty())
 	{
 		AddDesObjList(_str);
 	}
+
+	auto iter = DesableList.begin();
 
 	(*iter)->Initialize();
 	(*iter)->SetPosition(_pos);
