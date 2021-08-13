@@ -11,6 +11,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Prototype", "Prototype\Prot
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pattern", "Pattern\Pattern.vcxproj", "{CC192DE3-9E8F-475C-B5E4-A92AF6F994C6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{358375B3-EB81-49D2-93CB-895BC5031F88}"
+	ProjectSection(SolutionItems) = preProject
+		Common\Headers.h = Common\Headers.h
+		Common\Struct.h = Common\Struct.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

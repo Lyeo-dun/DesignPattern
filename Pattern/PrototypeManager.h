@@ -1,5 +1,5 @@
 #pragma once
-#include "../Common/Headers.h"
+#include "Headers.h"
 #include "Define.h"
 
 class Object;

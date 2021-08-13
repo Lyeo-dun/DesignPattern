@@ -13,10 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Object">
+      <UniqueIdentifier>{fe625a9f-24cb-4872-8bb9-f231d11768af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ObjectPoolManager">
+      <UniqueIdentifier>{d0b9de0f-3f69-43ea-a6f8-630a74b921b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\PrototypeManager">
+      <UniqueIdentifier>{1e658428-5c31-4edb-a7cb-a3d1850f8450}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectpoolManager.cpp">
+      <Filter>소스 파일\ObjectPoolManager</Filter>
+    </ClCompile>
+    <ClCompile Include="PrototypeManager.cpp">
+      <Filter>소스 파일\PrototypeManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Object.h">
+      <Filter>소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectpoolManager.h">
+      <Filter>소스 파일\ObjectPoolManager</Filter>
+    </ClInclude>
+    <ClInclude Include="PrototypeManager.h">
+      <Filter>소스 파일\PrototypeManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
