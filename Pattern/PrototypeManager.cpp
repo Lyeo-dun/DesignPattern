@@ -32,7 +32,7 @@ void PrototypeManager::Release()
 Object* PrototypeManager::FindObject(string _str)
 {
 	//** map에 오브젝트가 있는지 확인. 
-	map<string, Object*>::iterator iter = PrototypeList.find(_str);
+	auto iter = PrototypeList.find(_str);
 
 	//** 찾는 오브젝트가 없다면 nullptr 을 반환.
 	if (iter == PrototypeList.end())

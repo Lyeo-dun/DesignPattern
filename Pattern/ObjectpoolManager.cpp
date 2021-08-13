@@ -13,7 +13,6 @@ ObjectpoolManager::ObjectpoolManager()
 
 void ObjectpoolManager::Initialize()
 {
-	GETSINGLETON(PrototypeManager)->Initialize();
 }
 
 void ObjectpoolManager::Update()
@@ -60,7 +59,7 @@ void ObjectpoolManager::Release()
 
 void ObjectpoolManager::AddDesObjList(string _Str)
 {
-	Object* Obj = GETSINGLETON(PrototypeManager)->FindObject(_Str);
+	auto Obj = GETSINGLETON(PrototypeManager)->FindObject(_Str);
 	
 	if (Obj == nullptr)
 	{
@@ -73,7 +72,7 @@ void ObjectpoolManager::AddDesObjList(string _Str)
 
 	for (int i = 0; i < 5; ++i)
 	{
-		Object* TmpObj = Obj->Clone();
+		auto TmpObj = Obj->Clone();
 		DesableList.push_back(TmpObj);
 	}
 }
@@ -86,6 +85,6 @@ void ObjectpoolManager::AddEnalbeList(Vector3 _pos)
 	(*iter)->SetPosition(_pos);
 
 	EnableList.push_back((*iter));
-	DesableList.erase(iter);
+	DesableList.pop_front();
 }
 

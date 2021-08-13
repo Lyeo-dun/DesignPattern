@@ -5,6 +5,7 @@ void Output(float _x, float _y, string _str);
 
 int main(void)
 {
+	GETSINGLETON(PrototypeManager)->Initialize();
 	GETSINGLETON(ObjectpoolManager)->Initialize();
 
 	bool Check = false;
@@ -12,6 +13,8 @@ int main(void)
 	while (true)
 	{
 		system("cls");
+		
+		Check = false;
 
 		if (GetAsyncKeyState(VK_RETURN))
 			Check = true;
@@ -25,9 +28,7 @@ int main(void)
 			}
 
 			//** 초기화 및 사용할 리스트에 추가.
-			GETSINGLETON(ObjectpoolManager)->AddEnalbeList(Vector3(4.0f, 15.0f));	
-			
-			Check = false;
+			GETSINGLETON(ObjectpoolManager)->AddEnalbeList(Vector3(4.0f, 15.0f));			
 		}
 
 		GETSINGLETON(ObjectpoolManager)->Update();
@@ -52,7 +53,6 @@ int main(void)
 	//** DesableList 전제 삭제
 	//** EnableList 전제 삭제
 	GETSINGLETON(ObjectpoolManager)->Release();
-
 	GETSINGLETON(PrototypeManager)->Release();
 
 	DESTROYSINGLETON(ObjectpoolManager);
