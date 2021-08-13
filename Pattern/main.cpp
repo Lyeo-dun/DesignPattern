@@ -30,6 +30,7 @@ int main(void)
 
 		{
 			list<Object*> TmpList = *GETSINGLETON(ObjectpoolManager)->GetDesableList();
+			
 			//** 현재 리스트에 남아있는 오브젝트의 개수 확인. (DesableList)
 			string Buffer = "DesableList : " + to_string(TmpList.size());
 			Output(10, 1, Buffer);
