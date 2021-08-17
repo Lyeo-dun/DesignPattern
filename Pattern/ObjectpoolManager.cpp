@@ -5,6 +5,7 @@
 
 ObjectpoolManager::~ObjectpoolManager()
 {
+	Release();
 }
 
 ObjectpoolManager::ObjectpoolManager()
@@ -44,13 +45,10 @@ void ObjectpoolManager::Release()
 	auto iter = EnableList.begin();
 
 	for (iter = EnableList.begin(); iter != EnableList.end(); ++iter)
-	{
-		SAFE_DELETE(*iter);
-	} //활성화 리스트 내의 오브젝트 삭제
+		SAFE_DELETE(*iter); //활성화 리스트 내의 오브젝트 삭제
 	for (iter = DesableList.begin(); iter != DesableList.end(); ++iter)
-	{
-		SAFE_DELETE(*iter);
-	} //비활성화 리스트 내의 오브젝트 삭제
+		SAFE_DELETE(*iter); //비활성화 리스트 내의 오브젝트 삭제
+
 	EnableList.clear(); //활성화 리스트 삭제
 	DesableList.clear(); //비활성화 리스트 삭제
 }
@@ -80,9 +78,7 @@ void ObjectpoolManager::AddDesObjList(string _Str)
 void ObjectpoolManager::AddEnalbeList(string _str, Vector3 _pos)
 {
 	if (DesableList.empty())//비활성화 오브젝트에 활성화 시킬 오브젝트가 없다면
-	{
 		AddDesObjList(_str); //비활성화 오브젝트를 만든다
-	}
 
 	auto iter = DesableList.begin();
 

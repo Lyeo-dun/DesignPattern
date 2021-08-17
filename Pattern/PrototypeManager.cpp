@@ -8,6 +8,7 @@ PrototypeManager::PrototypeManager()
 
 PrototypeManager::~PrototypeManager()
 {
+	Release();
 }
 
 void PrototypeManager::Initialize(string _Str)

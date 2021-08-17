@@ -29,16 +29,18 @@ int main(void)
 		GETSINGLETON(ObjectpoolManager)->Render();
 
 		{
-			list<Object*> TmpList = *GETSINGLETON(ObjectpoolManager)->GetDesableList();
+			auto TmpList = GETSINGLETON(ObjectpoolManager)->GetDesableList();
 			
 			//** 현재 리스트에 남아있는 오브젝트의 개수 확인. (DesableList)
-			string Buffer = "DesableList : " + to_string(TmpList.size());
-			Output(10, 1, Buffer);
+			auto Buffer = "DesableList : " + to_string(TmpList->size());
+			Output(10, 1, Buffer);			
+			
 			Buffer.clear();
+			TmpList = nullptr;
 
-			TmpList = *GETSINGLETON(ObjectpoolManager)->GetEnableList();
+			TmpList = GETSINGLETON(ObjectpoolManager)->GetEnableList();
 			//** 현재 리스트에 남아있는 오브젝트의 개수 확인. (EnableList)
-			Buffer = "EnableList : " + to_string(TmpList.size());
+			Buffer = "EnableList : " + to_string(TmpList->size());
 			Output(10, 2, Buffer);
 		}
 
@@ -47,8 +49,6 @@ int main(void)
 
 	//** DesableList 전제 삭제
 	//** EnableList 전제 삭제
-	GETSINGLETON(ObjectpoolManager)->Release();
-	GETSINGLETON(PrototypeManager)->Release();
 
 	DESTROYSINGLETON(ObjectpoolManager);
 	DESTROYSINGLETON(PrototypeManager);
