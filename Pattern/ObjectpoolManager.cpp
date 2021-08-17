@@ -2,14 +2,13 @@
 #include "PrototypeManager.h"
 #include "Object.h"
 
+ObjectpoolManager::ObjectpoolManager()
+{
+}
 
 ObjectpoolManager::~ObjectpoolManager()
 {
 	Release();
-}
-
-ObjectpoolManager::ObjectpoolManager()
-{
 }
 
 void ObjectpoolManager::Initialize()
