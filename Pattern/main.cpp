@@ -1,8 +1,6 @@
 #include "ObjectpoolManager.h"
 #include "PrototypeManager.h"
 
-void Output(float _x, float _y, string _str);
-
 int main(void)
 {
 	GETSINGLETON(PrototypeManager)->Initialize("Object");
