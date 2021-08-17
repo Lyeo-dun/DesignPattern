@@ -9,7 +9,7 @@ private:
 public:
 	Object* Clone() { return new Object(*this); }
 	void Initialize();
-	void Update();
+	int Update();
 	void Render();
 
 	Vector3 GetPosition() { return Transinfo.Position; }

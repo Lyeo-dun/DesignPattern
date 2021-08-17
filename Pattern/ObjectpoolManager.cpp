@@ -18,11 +18,16 @@ void ObjectpoolManager::Initialize()
 
 void ObjectpoolManager::Update()
 {
+	//초기화 및 사용할 리스트에 추가.
+	if (GetAsyncKeyState(VK_RETURN))
+		GETSINGLETON(ObjectpoolManager)->AddEnalbeList("Object", Vector3(4.0f, 15.0f));
+
+
 	for (auto iter = EnableList.begin();iter != EnableList.end();)
 	{
-		(*iter)->Update();
+		int Result = (*iter)->Update();
 
-		if ((*iter)->GetPosition().x >= 100) //일정 조건이 되었다면
+		if (Result) //일정 조건이 되었다면
 		{
 			DesableList.push_back((*iter)); //비활성화 리스트에 추가
 			iter = EnableList.erase(iter); //활성화 리스트에서 삭제
@@ -34,6 +39,22 @@ void ObjectpoolManager::Update()
 
 void ObjectpoolManager::Render()
 {
+	{
+		auto TmpList = GetDesableList();
+
+		//** 현재 리스트에 남아있는 오브젝트의 개수 확인. (DesableList)
+		auto Buffer = "DesableList : " + to_string(TmpList->size());
+		Output(10, 1, Buffer);
+
+		Buffer.clear();
+		TmpList = nullptr;
+
+		TmpList = GetEnableList();
+		//** 현재 리스트에 남아있는 오브젝트의 개수 확인. (EnableList)
+		Buffer = "EnableList : " + to_string(TmpList->size());
+		Output(10, 2, Buffer);
+	}
+
 	for (auto iter = EnableList.begin(); iter != EnableList.end() ; ++iter)
 	{
 		(*iter)->Render();//활성화 리스트에 있는 것만 렌더
@@ -73,6 +94,14 @@ void ObjectpoolManager::AddDesObjList(string _Str)
 		auto TmpObj = Obj->Clone(); //원본 복사
 		DesableList.push_back(TmpObj); //비활성화 리스트에 추가
 	}
+}
+
+void ObjectpoolManager::Output(float _x, float _y, string _str)
+{
+	COORD Pos = { (SHORT)_x, (SHORT)_y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
+
+	cout << _str << endl;
 }
 
 void ObjectpoolManager::AddEnalbeList(string _str, Vector3 _pos)

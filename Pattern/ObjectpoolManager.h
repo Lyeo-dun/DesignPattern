@@ -25,6 +25,7 @@ public:
 	
 private:
 	void AddDesObjList(string);//비활성화 리스트에 추가
+	void Output(float _x, float _y, string _str);
 
 public:
 	ObjectpoolManager();

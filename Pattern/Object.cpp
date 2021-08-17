@@ -8,9 +8,14 @@ void Object::Initialize()
 	Transinfo.Scale = Vector3((float)Texture.length(), 1.0f);
 }
 
-void Object::Update()
+int Object::Update()
 {
 	Transinfo.Position.x += 2.0f;
+
+	if (Transinfo.Position.x >= 100)
+		return 1;
+
+	return 0;
 }
 
 void Object::Render()
