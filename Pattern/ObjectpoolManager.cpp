@@ -20,7 +20,7 @@ void ObjectpoolManager::Update()
 {
 	//초기화 및 사용할 리스트에 추가.
 	if (GetAsyncKeyState(VK_RETURN))
-		GETSINGLETON(ObjectpoolManager)->AddEnalbeList("Object", Vector3(4.0f, 15.0f));
+		AddEnalbeList("Object", Vector3(4.0f, 15.0f));
 
 
 	for (auto iter = EnableList.begin();iter != EnableList.end();)
