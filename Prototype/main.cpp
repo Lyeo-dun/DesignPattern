@@ -55,7 +55,7 @@ int main(void)
 				(*iter)->Render();
 			}
 	}
-
+	 
 	for (list<Object*>::iterator iter = pObjList.begin(); iter != pObjList.end(); ++iter)
 	{
 		SAFE_DELETE((*iter));
